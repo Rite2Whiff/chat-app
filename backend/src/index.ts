@@ -10,7 +10,6 @@ interface User {
 let allSockets: User[] = [];
 
 wss.on("connection", function (socket) {
-  socket.send("user connected");
   socket.on("message", function (message) {
     // @ts-ignore
     const parsedMessage = JSON.parse(message);
